@@ -1,0 +1,90 @@
+/*********
+ ******/
+
+body{
+    background: yellow;
+}
+.mster-head{
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+}
+.menu{
+    cursor: pointer;
+    width: 55px;
+    z-index: 3;
+}
+.menu div{
+    background-color: red;
+    border-radius: 30px;
+    height: 10px;
+    transition-duration: 200ms;
+    margin-bottom: 3px;
+}
+.maincontent p{
+    color: red;
+    font-size: 25px;
+    letter-spacing: 1.7px;
+    line-height: 1.5;
+}
+.main-nav::before,
+.main-nav::after{
+    background-color:green;
+    content:"";
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0vw;
+    transition: all 100ms ease-in-out 300ms;
+}
+.main-nav::before{
+    left: 0;
+}
+.main-nav::after{
+    right: 0;
+}
+.main-nav ul{
+    background: black;
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    z-index: 9999;
+}
+.main-nav a{
+    display: block;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    transition-delay: 130ms;
+}
+.menu.active .first{
+    transform: translate(0, 14px) rotate(45deg);
+}
+.menu.active .second{
+    background-color: transparent; 
+}
+.menu.active .third{
+    transform: translate(0,-14px) rotate(-40deg);
+}
+.main-nav.active::before,
+.main-nav.active::after{
+    width: 25vw;
+}
+.main-nav.active ul{
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition-delay: 560ms;
+    transition-duration: 240ms;
+    list-style: none;
+}
+.main-nav.active a{
+    transition-delay: 600ms;
+    opacity: 1;
+    text-decoration: none;
+}
